@@ -47,8 +47,8 @@ from statsmodels.tsa.api import AutoReg
 ##########################################################################################################################
 
 # Charger les datasets
-df = pd.read_excel(r"Dataset PD.xlsx", sheet_name="pass")
-futur = pd.read_excel(r"forward_looking_ngfs.xlsx")
+df = pd.read_excel(r"C:\VSCODE THEO\appli_ngfs\Dataset PD.xlsx", sheet_name="pass")
+futur = pd.read_excel(r"C:\VSCODE THEO\appli_ngfs\forward_looking_ngfs.xlsx")
 
 # Préparer les données pour le graphique "passé"
 def quarter_to_date(quarter):
@@ -603,9 +603,9 @@ st.title("Dashboard for modeling risk parameters ('Forward-looking') based on NG
 st.write("You will find the main steps for modeling")
 
 with st.sidebar:
-    st.image("NEONRISK_LOGO.png", 
+    st.image("C:/VSCODE THEO/appli_ngfs/NEONRISK_LOGO.png", 
              caption="NEON RISK", width=150)
-    st.image("NGFS_LOGO.jpg", 
+    st.image("C:/VSCODE THEO/appli_ngfs/# DATA NGFS/DATA/NGFS_LOGO.jpg", 
              caption="NGFS", width=150)
 
 
