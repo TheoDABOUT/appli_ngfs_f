@@ -933,15 +933,14 @@ with st.expander("Data analysis"):
             fig, ax = plt.subplots(figsize=(16, 8))
 
             for column in selected_columns_futur:  # Iterate over selected columns
-                sns.lineplot(
-                    data=filtered_df, 
-                    x=filtered_df.index, 
-                    y=f"{column}_Norm", 
-                    hue='Model_Scenario', 
-                    marker='o', 
-                    ax=ax, 
-                    label=column  # Add column name as a label
-                )
+                for scenario in selected_model_scenarios:
+                    scenario_data = filtered_df[filtered_df['Model_Scenario'] == scenario]
+                    ax.plot(
+                        scenario_data.index, 
+                        scenario_data[f"{column}_Norm"], 
+                        marker='o', 
+                        label=f"{column} - {scenario}"
+                    )
 
             ax.set_title(f"Évolution normalisée des variables: {', '.join(selected_columns_futur)}", fontsize=14)
             ax.set_xlabel("Année", fontsize=12)
