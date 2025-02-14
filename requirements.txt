@@ -1,7 +1,7 @@
 openpyxl
 pandas
 matplotlib
-seaborn
+seaborn>=0.11.2
 streamlit
 scipy
 numpy
